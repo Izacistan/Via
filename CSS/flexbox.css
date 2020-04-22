@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.logo {
+  order: 1;
+}
+
+.gallery,
+.contact {
+  order: 3;
+}
+
+/* ====== Media Queries */
+
+@media only screen and (min-width: 480px) {
+
+}
+
+@media only screen and (min-width: 480px) {
+
+}
+
+@media only screen and (min-width: 1140px) {
+
+}

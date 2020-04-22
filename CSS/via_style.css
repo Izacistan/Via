@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f8f8fa;
+}
+
+.logo {
+  object-fit: fill;
+  width: 15em;
+  height: 15em;
+}
+
+.container {
+  width: 100%;
+  padding: 10px;
+	background: #f8f8fa;
+  border-radius: 5px;
+	margin: 45px auto;
+  box-shadow: 0 1.5px 0 0 rgba(0,0,0,0.1);
+}
+
+.item {
+	color: #fff;
+	padding: 15px;
+	margin: 5px;
+	background: #3db5da;
+	border-radius: 3px;
+}
+
+/* Media Queries */
+
+@media only screen and (min-width: 480px) {
+
+}
+
+@media only screen and (min-width: 480px) {
+
+}
+
+@media only screen and (min-width: 1140px) {
+
+}
