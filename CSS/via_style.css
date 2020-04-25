@@ -3,7 +3,7 @@
 body {
   font-family: 'Spartan', sans-serif;
   margin: 0;
-  background: #eee;
+  background-color: #fff;
   height: auto;
 }
 
@@ -19,9 +19,24 @@ h2 {
   margin: 0;
 }
 
+/* Image alteration and settings */
+
 img {
   display: block;
   width: 100%;
+  object-fit: cover;
+}
+
+.topPic {
+
+}
+
+.weddingPic {
+  object-fit: cover;
+}
+
+.pixieCut {
+  object-fit: cover;
 }
 
 main {
@@ -40,7 +55,7 @@ main {
   background-color: white;
   display: flex;
   flex: 0 1 40vw; /* Viewport width */
-  height: 50vh;
+  height: 40vh;
   justify-content: center; /* aligns text to center */
   align-items: center; /* aligns items in the center, pushing it to the middle of the container. */
   text-align: center;
@@ -59,7 +74,7 @@ main {
   background-repeat: no-repeat;
   height: 50vh;
   flex: 0 1 60vw;
-  margin-top: 25px;
+  margin: 0;
 }
 
 .btn {
