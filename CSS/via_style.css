@@ -1,146 +1,48 @@
 @import url('https://fonts.googleapis.com/css2?family=Spartan&display=swap');
 
+/*  CSS Grid */
+* {
+  box-sizing: border-box;
+}
+
 body {
-  font-family: 'Spartan', sans-serif;
-  margin: 0;
-  background-color: #fff;
-  height: auto;
-}
-
-h1 {
-  font-weight: 400;
-  font-size: 2.5em;
-  margin: 0;
-}
-
-h2 {
-  font-weight: 400;
-  font-size: 1.2em;
-  margin: 0;
-}
-
-/* Image alteration and settings */
-
-img {
-  display: block;
-  width: 100%;
-  object-fit: cover;
-}
-
-.topPic {
-
-}
-
-.weddingPic {
-  object-fit: cover;
-}
-
-.pixieCut {
-  object-fit: cover;
+  background: #fafafa;
+  margin: 1em 1em 1em 1em;
 }
 
 main {
-  background-color: white;
-  max-width: 900px;
-  margin: auto;
-  box-shadow: 30px 0px 40px rgba(0,0,0,0.1),
-  -30px 0px 40px rgba(0,0,0,0.1);
+  display: grid;
+  /* grid-gap: 1em; */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* minmax tells the browser to make the columns a minimum of 200px and a max of 1fr. */
 }
 
-#landing {
-  background: white;
-}
-
-#landing-text {
-  background-color: white;
-  display: flex;
-  flex: 0 1 40vw; /* Viewport width */
-  height: 40vh;
-  justify-content: center; /* aligns text to center */
-  align-items: center; /* aligns items in the center, pushing it to the middle of the container. */
-  text-align: center;
-  padding-right: 1em;
-  padding-left: 1em;
-}
-
-#landing-text h2 {
-  color: #888;
-}
-
-#landing-image {
-  background: url(../img/via_logo.png);
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-  height: 50vh;
-  flex: 0 1 60vw;
-  margin: 0;
-}
-
-.btn {
-  padding: 0.5em 2em;
-  border: 1px #ccc solid;
-  display: inline-block; /** Keeps button from overlapping h2 */
-  margin: 2em 0 0;
-  border-radius: 50px;
-  text-decoration: none;
-  color: #333;
-  transition: background 250ms ease; /* Controls fade in effect for button */
-}
-
-.btn:hover {
-  background: #f4f4f4;
-}
-
-#header {
-  padding: 1.5em;
-  text-align: center;
-  background: #333;
-  color: #fff;
-}
-
-#header h2 {
-  border-left: dotted 1px #fff;
-  border-right: dotted 1px #fff;
-  display: inline-block;
-  padding-right: 1em;
-  padding-left: 1em;
-}
-
-.caption {
-  padding: 0.8em;
+.contact {
+  display: block;
+  width: 100%;
+  height: 300px;
+  /* object-fit: cover; */
+  font-size: 5em;
   text-align: center;
 }
 
-footer {
-  text-align: center;
-  padding: 2em 1em;
-  margin: auto;
-  color: #333;
+.logo {
+  object-fit: contain;
+  display: block;
+  width: 100%;
+  height: 300px;
+  background-color: pink;
 }
 
-footer h3 {
-  font-size: 3em;
-  margin-bottom: 0;
+.gal-image {
+  display: block;
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  transition: .3s ease-in-out;
+  -webkit-filter: grayscale(100%);
 }
 
-@media(min-wdith: 500px) {
-  #landing {
-    display: flex;
-    height: 100%;
-  }
-
-  #landing-text{
-    height: 100vh;
-  }
-
-  #landing-image {
-    height: 100vh;
-  }
-}
-
-@media(min-width:700px) {
-  .btn {
-    padding: 1em 3em;
-  }
+.gal-image:hover {
+  -webkit-filter: grayscale(0%);
+  /* filter: grayscale(0); */
 }
