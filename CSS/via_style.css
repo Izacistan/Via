@@ -7,22 +7,24 @@
 
 body {
   background: white;
-  margin: 1em 1em 1em 1em;
+  margin: 0;
 }
 
-main {
+ul {
   display: grid;
   grid-gap: 5px;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* minmax tells the browser to make the columns a minimum of 200px and a max of 1fr. */
+  list-style: none;
+  padding: 0;
 }
 
 /**************************************************** Class Selectors */
 
 img {
-  display: block;
-  width: 100%;
-  height: 375px;
   object-fit: cover;
+  display: block;
+  width: 100%; /* Tells element to take up 100% of the container */
+  max-height: 100%; /* Prevents the content in the container from overflowing. Perfectly scales image containers. *.
   /* transition: .3s ease-in-out;
   -webkit-filter: grayscale(100%); */
 }
