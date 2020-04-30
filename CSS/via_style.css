@@ -14,11 +14,14 @@ header {
   margin-top: 1em;
   display: grid;
   grid-template-columns: 375px;
-  grid-template-rows: 375px 100px 100px;
+  grid-template-rows: 375px 100px;
   grid-gap: 5px;
 }
 
-div {
+.contact {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
   text-align: center;
 }
 
