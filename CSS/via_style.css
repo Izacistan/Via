@@ -10,6 +10,18 @@ body {
   margin: 0;
 }
 
+header {
+  margin-top: 1em;
+  display: grid;
+  grid-template-columns: 375px;
+  grid-template-rows: 375px 100px 100px;
+  grid-gap: 5px;
+}
+
+div {
+  text-align: center;
+}
+
 ul {
   display: grid;
   grid-gap: 5px;
@@ -19,6 +31,10 @@ ul {
 }
 
 /**************************************************** Class Selectors */
+
+.logo {
+  object-fit: contain;
+}
 
 img {
   object-fit: cover;
