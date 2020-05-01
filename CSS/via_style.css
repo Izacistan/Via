@@ -48,7 +48,7 @@ img {
   object-fit: cover;
   display: block;
   width: 100%; /* Tells element to take up 100% of the container */
-  max-height: 100%; /* Prevents the content in the container from overflowing. Perfectly scales image containers. *.
+  height: 100%; /* Prevents the content in the container from overflowing. Perfectly scales image containers. *.
   /* transition: .3s ease-in-out;
   -webkit-filter: grayscale(100%); */
 }
