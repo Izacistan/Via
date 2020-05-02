@@ -38,8 +38,8 @@ ul {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
-  border: 5px solid #f5f5f5;
-  background-color: #f5f5f5;
+  border: 5px solid #222831;
+  background-color: #222831;
 }
 
 /* Icons within contact card */
