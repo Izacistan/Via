@@ -14,9 +14,15 @@ body {
 header {
   margin-top: 1em;
   display: grid;
-  grid-template-columns: 375px;
+  grid-template-columns: 100%;
   grid-template-rows: 375px 100px;
   grid-gap: 2em;
+}
+
+main {
+  background-color: white;
+  /* box-shadow: 30px 0px 40px rgba(0,0,0,0.1),
+  -30px 0px 40px rgba(0,0,0,0.1); */
 }
 
 ul {
@@ -25,6 +31,29 @@ ul {
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* minmax tells the browser to make the columns a minimum of 200px and a max of 1fr. */
   list-style: none;
   padding: 0;
+}
+
+/* ----------------------------------------- FOOTER STYLING */
+
+.black {
+  background-color: #222831;
+}
+
+footer {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: [break_row1] 4em [contact_header] 0.25fr [paragraph1] auto [paragraph2] auto;
+  width: 100%;
+  height: 100%;
+  font-family: Spartan;
+  text-align: center;
+  background-color: #fff;
+  box-shadow: 5px 10px 8px #888888;
+  /* margin-top: 3em; */
+}
+
+h3 {
+  font-size: 2em;
 }
 
 /**************************************************** Class Selectors */
@@ -45,14 +74,18 @@ ul {
 /* Icons within contact card */
 .icon {
   object-fit: contain;
-  width: 45%;
+  width: 40%;
+  /* height: 40% */
   /* padding-top: 5px; */
 }
 
 a {
   display: flex;
   justify-content: space-around;
+  /* width: 100%; */
 }
+
+/************************************************* Image Stlying */
 
 img {
   object-fit: cover;
@@ -67,5 +100,6 @@ img:hover {
   /* -webkit-filter: grayscale(0%); */
   /* filter: grayscale(0); */
 }
+
 
 /************************************************************************ Media Queries */
