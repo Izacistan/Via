@@ -156,17 +156,30 @@ footer {
 
 /* Grid Area assignments */
 
-.logo {
-  grid-area: logo;
-}
+  .logo {
+    grid-area: logo;
+  }
 
-.img1 .img2 .img3 .img4 .img5 .img6 .img7 .img8 .img9 {
-  grid-area: img;
-}
+  .img1 .img2 .img3 .img4 .img5 .img6 .img7 .img8 .img9 {
+    grid-area: img;
+  }
 
-.foot-nav-container {
-  grid-area: nav;
-}
+  .foot-nav-container {
+    grid-area: nav;
+  }
+
+/* Navigation icons */
+
+  .foot-nav-container {
+    flex-direction: column;
+    border-radius: 0;
+  }
+
+  .icon {
+    width: 9em;
+    margin-left: 3.0625em;
+  }
+
 /* Things to ignore */
   .nav-container {
     display: none;
