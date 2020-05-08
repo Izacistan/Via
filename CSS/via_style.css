@@ -141,3 +141,34 @@ footer {
   }
 
 }
+
+@media only screen and (min-width: 1024px) {
+/* Primary Grid */
+  #container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas:
+    "logo img img img"
+    "nav img img img"
+    "nav img img img"
+  }
+
+/* Grid Area assignments */
+
+.logo {
+  grid-area: logo;
+}
+
+.img1 .img2 .img3 .img4 .img5 .img6 .img7 .img8 .img9 {
+  grid-area: img;
+}
+
+.foot-nav-container {
+  grid-area: nav;
+}
+/* Things to ignore */
+  .nav-container {
+    display: none;
+  }
+}
