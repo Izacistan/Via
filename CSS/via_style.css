@@ -161,8 +161,18 @@ img:hover {
     grid-area: img;
   }
 
-  .logo .icon {
+  .logo .email .phone {
     grid-area: nav;
+  }
+
+  .email {
+    background-image: url(../img/email_Icon.png);
+    object-fit:  contain;
+  }
+
+  .phone {
+    background-image: url(../img/phone_Icon.png);
+    object-fit: cover;
   }
 
 }
