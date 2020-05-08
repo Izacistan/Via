@@ -148,8 +148,8 @@ img:hover {
 
   #gallery {
     display: grid;
-    grid-template-columns: repeat(3, minmax(200px, 1fr));
-    grid-template-rows: repeat(3, minmax(200px, 1fr));
+    grid-template-columns: repeat(3, minmax(12.5em, 18.75em));
+    grid-template-rows: repeat(3, minmax(12.5em, 18.75));
     min-height: 100vh;
     grid-template-areas:
     "img img img"
