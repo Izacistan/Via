@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Spartan&display=swap');
 
-/*  CSS Grid */
+
 * {
   box-sizing: border-box;
 }
@@ -10,14 +10,15 @@ body {
   margin: 0;
 }
 
-/* .header-break {
-  background-color: #222831;
-  color: white;
-  text-align: center;
-  font-size: 2.25em;
-  font-family: Spartan;
-  padding-top: 17px;
-} */
+/************************************************* Main Grid layout */
+
+#container {
+  margin-top: 1em;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 4.75em 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 1em;
+}
 
 /************************************************* Nav Bar and Button Styles */
 
@@ -38,7 +39,12 @@ body {
   padding: 28px;
   text-decoration: none;
 }
+
 /************************************************* Image Stlying */
+
+.logo {
+  object-fit: contain;
+}
 
 img {
   object-fit: cover;
@@ -79,61 +85,3 @@ footer {
 }
 
 /************************************************************************ Media Queries */
-
-
-@media screen and (min-width: 480px) {
-  header {
-    margin-top: 1em;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 10.6em;
-    background: #222831;
-  }
-
-  .logo {
-    filter: invert(100%);
-  }
-
-  .contact {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 80%;
-    grid-gap: 1em;
-    background-color: #222831;
-    justify-content: space-around;
-    margin-top: 25px;
-
-  }
-
-  .header-break {
-    display: none;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-
-  body {
-    margin: 25px;
-    border: black solid 2px;
-  }
-
-  #gallery {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(12.5em, 18.75em));
-    grid-template-rows: repeat(3, minmax(12.5em, 18.75));
-    min-height: 100vh;
-    grid-template-areas:
-    "img img img"
-    "img img img"
-    "img img img"
-  }
-
-  .img1 .img2 .img3 .img4 .img5 .img6 .img7 .img8 .img9 {
-    grid-area: img;
-  }
-
-  .logo .icon {
-    grid-area: nav;
-  }
-
-}
