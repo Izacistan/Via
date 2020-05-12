@@ -250,6 +250,17 @@ footer {
     filter: grayscale(0);
   }
 
+  .logo:hover {
+    filter: invert(100%); /* Prevent logo from dissapearing when hovering */
+  }
+  
+/* Zoom effect on hover */
+.icon:hover {
+  -ms-transform: scale(1.2); /* IE 9 */
+  -webkit-transform: scale(1.2); /* Safari 3-8 */
+  transform: scale(1.2);
+}
+
 /* Things to ignore */
   .nav-container {
     display: none;
