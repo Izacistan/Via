@@ -194,6 +194,7 @@ footer {
     margin: auto;
     width: 75%;
     height: auto;
+    background-color: black;
   }
 
 /* Primary Grid */
@@ -211,6 +212,7 @@ footer {
 /* Grid Area assignments */
 
   .logo {
+    filter: invert(100%);
     grid-area: logo;
   }
 
@@ -225,10 +227,9 @@ footer {
 /* Navigation icons */
 
   .foot-nav-container {
-    background-color: white;
+    background-color: #F5F5F5;
     flex-direction: column;
-    border-radius: 0;
-    border: solid black 1px;
+    border-radius: 15px;
 
   }
 
@@ -241,6 +242,7 @@ footer {
   img {
     transition: .3s ease-in-out;
     -webkit-filter: grayscale(100%);
+    border-radius: 15px;
   }
 
   img:hover {
