@@ -239,13 +239,13 @@ footer {
 /* Gray to color transition */
   img {
     transition: .3s ease-in-out;
-    -webkit-filter: grayscale(100%);
+    /* -webkit-filter: grayscale(100%); */
     border-radius: 15px;
   }
 
   img:hover {
-    -webkit-filter: grayscale(0%);
-    filter: grayscale(0);
+    /* -webkit-filter: grayscale(0%);
+    filter: grayscale(0); */
   }
 
   .logo:hover {
@@ -254,7 +254,6 @@ footer {
 
 /* Zoom effect on hover */
 .icon:hover {
-  -ms-transform: scale(1.2); /* IE 9 */
   -webkit-transform: scale(1.2); /* Safari 3-8 */
   transform: scale(1.2);
 }
