@@ -70,13 +70,17 @@ img {
 .foot-nav-container {
   background-color: white;
   display: flex;
-  justify-content: space-around;
   width: 100%;
   height: 150px;
 }
 
+a {
+  display: flex;
+  justify-content: center;
+}
+
 .icon {
-  width: 7em;
+  width: 55%;
   object-fit: contain;
 }
 
@@ -119,7 +123,6 @@ footer {
 /* Footer Styles */
 
   .foot-nav-container {
-    justify-content: space-evenly;
     height: 100%;
     background-color: black;
     border-radius: 15px 0 0 0 ;
@@ -176,7 +179,11 @@ footer {
     flex-direction: column;
     border-radius: 0;
     border: solid black 1px;
+    justify-content: center;
+  }
 
+  a {
+    align-items: center;
   }
 
   .icon {
@@ -191,9 +198,7 @@ footer {
 @media only screen and (min-width: 1025px) {
 
   body {
-    margin: auto;
     width: 75%;
-    height: auto;
     background-color: black;
   }
 
@@ -220,22 +225,15 @@ footer {
     grid-area: img;
   }
 
-  .foot-nav-container {
-    grid-area: nav;
-  }
-
 /* Navigation icons */
 
   .foot-nav-container {
     background-color: #F5F5F5;
-    flex-direction: column;
     border-radius: 15px;
-
   }
 
   .icon {
-    width: 10em;
-    margin: 25%;
+    width: 52%;
   }
 
 /* Gray to color transition */
@@ -253,7 +251,7 @@ footer {
   .logo:hover {
     filter: invert(100%); /* Prevent logo from dissapearing when hovering */
   }
-  
+
 /* Zoom effect on hover */
 .icon:hover {
   -ms-transform: scale(1.2); /* IE 9 */
