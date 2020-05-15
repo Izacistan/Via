@@ -16,7 +16,7 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 4.75em 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-gap: 2em;
+  grid-gap: 1em;
 }
 
 /************************************************* Nav Bar and Button Styles */
@@ -174,11 +174,19 @@ footer {
 
   /* Navigation icons */
 
+  img {
+    border-radius: 15px;
+  }
+
+  .logo {
+    border-radius: 0;
+  }
+
   .foot-nav-container {
     background-color: white;
     flex-direction: column;
-    border-radius: 0;
-    border: solid black 1px;
+    border-radius: 15px;
+    background-color: black;
     justify-content: center;
   }
 
@@ -208,6 +216,7 @@ footer {
     max-height: 95vh;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(3, 1fr);
+    grid-gap: 2em;
     grid-template-areas:
     "logo img img img"
     "nav img img img"
@@ -248,7 +257,7 @@ footer {
 
   .logo:hover {
     filter: invert(100%); /* Prevent logo from dissapearing when hovering */
-    transform: none;
+    transform: none; /* Prevents logo from enlarging when hvoering */
   }
 
 /* Zoom effect on hover */
