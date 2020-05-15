@@ -16,7 +16,7 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 4.75em 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-gap: 1em;
+  grid-gap: 2em;
 }
 
 /************************************************* Nav Bar and Button Styles */
@@ -239,17 +239,16 @@ footer {
 /* Gray to color transition */
   img {
     transition: .3s ease-in-out;
-    /* -webkit-filter: grayscale(100%); */
     border-radius: 15px;
   }
 
   img:hover {
-    /* -webkit-filter: grayscale(0%);
-    filter: grayscale(0); */
+    transform: scale(1.1);
   }
 
   .logo:hover {
     filter: invert(100%); /* Prevent logo from dissapearing when hovering */
+    transform: none;
   }
 
 /* Zoom effect on hover */
