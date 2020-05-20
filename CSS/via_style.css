@@ -5,7 +5,7 @@
 }
 
 body {
-  background: white;
+  background: #F5F5F5;
   margin: 0;
 }
 
@@ -207,7 +207,6 @@ footer {
 
   body {
     width: 75%;
-    background-color: black;
   }
 
 /* Primary Grid */
@@ -225,7 +224,6 @@ footer {
 /* Grid Area assignments */
 
   .logo {
-    filter: invert(100%);
     grid-area: logo;
   }
 
@@ -236,7 +234,6 @@ footer {
 /* Navigation icons */
 
   .foot-nav-container {
-    background-color: #F5F5F5;
     border-radius: 15px;
   }
 
@@ -248,15 +245,20 @@ footer {
   img {
     transition: .3s ease-in-out;
     border-radius: 15px;
+    filter: grayscale(100%);
   }
 
   img:hover {
     transform: scale(1.1);
+    filter: grayscale(0%);
   }
 
   .logo:hover {
-    filter: invert(100%); /* Prevent logo from dissapearing when hovering */
     transform: none; /* Prevents logo from enlarging when hvoering */
+  }
+
+  .icon {
+    /* filter: none; */
   }
 
 /* Zoom effect on hover */
