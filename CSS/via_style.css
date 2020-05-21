@@ -31,15 +31,14 @@ body {
 
 .button {
   font-family: Spartan;
-  background-color: black;
   border: none;
   color: white;
-  font-size: 25px;
-  padding: 28px;
+  font-size: 23px;
+  padding: 1.1em;
   text-decoration: none;
 }
 
-/************************************************* Image Stlying */
+/************************************************* Image Styling */
 
 .logo {
   object-fit: contain;
@@ -95,16 +94,51 @@ footer {
   padding: 20px;
 }
 
+/* Things to ignore */
+
+ .about {
+   display: none;
+ }
+
 /************************************************************************ Media Queries */
 
 @media only screen and (min-width: 640px){
 
   #container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 100px 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 1em;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 100px 1fr 1fr 1fr 100px;
+    grid-template-areas:
+    "logo nav nav"
+    "img img img"
+    "img img img"
+    "img img img"
+    "f-text f-text foot";
   }
 
+/* Grid Area Assignments */
+
+  .logo {
+    grid-area: logo;
+  }
+
+  .img1 .img2 .img3 .img4 .img5 .img6 .img7 .img8 .img9 {
+    grid-area: img;
+  }
+
+  .nav-container {
+    grid-area: nav;
+  }
+
+  footer {
+    grid-area: f-text;
+    border-radius: 0 15px 0 0;
+  }
+
+  .foot-nav-container {
+    grid-area: foot;
+  }
 /* Nav Bar and Button Styles */
 
   .nav-container {
@@ -114,25 +148,21 @@ footer {
 
   .button {
     border-radius: 15px;
-    padding: 1.5em;
+    padding: 1.7em;
   }
 
-  .logo {
-    /* filter: invert(100); */
-  }
 /* Footer Styles */
 
   .foot-nav-container {
     height: 100%;
     background-color: #F5F5F5;
-    border-radius: 15px 0 0 0 ;
+  }
+
+  .icon {
+    width: 70%;
   }
 
   .contactBar {
-    display: none;
-  }
-
-  footer {
     display: none;
   }
 
@@ -183,8 +213,10 @@ footer {
   }
 
   .foot-nav-container {
+    background-color: white;
     flex-direction: column;
     border-radius: 15px;
+    background-color: black;
     justify-content: center;
   }
 
@@ -210,13 +242,14 @@ footer {
 /* Primary Grid */
   #container {
     display: grid;
-    grid-template-columns: repeat(4, minmax(15em, 20em));
-    grid-template-rows: repeat(3, minmax(15em, 20em));
+    grid-template-columns: repeat(3, minmax(15em, 20em));
+    grid-template-rows: repeat(4, minmax(15em, 20em));
     grid-gap: 2em;
     grid-template-areas:
-    "logo img img img"
-    "nav img img img"
-    "nav img img img"
+    "logo nav nav"
+    "img img img"
+    "img img img"
+    "img img img"
   }
 
 /* Grid Area assignments */
@@ -229,15 +262,15 @@ footer {
     grid-area: img;
   }
 
-/* Navigation icons */
-
-  .foot-nav-container {
-    border-radius: 15px;
-    background-color: #F5F5F5;
+  .nav-container {
+    grid-area: nav;
   }
 
-  .icon {
-    width: 52%;
+/* Navigation Bar */
+
+  .nav-container {
+    display: flex;
+    justify-content: space-around;
   }
 
 /* Gray to color transition */
@@ -256,18 +289,8 @@ footer {
     transform: none; /* Prevents logo from enlarging when hvoering */
   }
 
-  .icon {
-    /* filter: none; */
-  }
-
-/* Zoom effect on hover */
-.icon:hover {
-  -webkit-transform: scale(1.2); /* Safari 3-8 */
-  transform: scale(1.2);
-}
-
 /* Things to ignore */
-  .nav-container {
+  .foot-nav-container {
     display: none;
   }
 }
