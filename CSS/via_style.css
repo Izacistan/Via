@@ -168,82 +168,18 @@ footer {
 
 }
 
-@media only screen and (min-width: 961px) {
-
-  body {
-    margin: auto;
-    width: 90%;
-    height: auto;
-  }
-
-  /* Primary Grid */
-  #container {
-    display: grid;
-    max-height: 95vh;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    grid-template-areas:
-    "logo img img img"
-    "nav img img img"
-    "nav img img img"
-  }
-
-  /* Grid Area assignments */
-
-  .logo {
-    grid-area: logo;
-  }
-
-  .img1 .img2 .img3 .img4 .img5 .img6 .img7 .img8 .img9 {
-    grid-area: img;
-  }
-
-  .foot-nav-container {
-    grid-area: nav;
-  }
-
-  /* Navigation icons */
-
-  img {
-    border-radius: 15px;
-  }
-
-  .logo {
-    border-radius: 0;
-  }
-
-  .foot-nav-container {
-    background-color: white;
-    flex-direction: column;
-    border-radius: 15px;
-    background-color: black;
-    justify-content: center;
-  }
-
-  a {
-    align-items: center;
-  }
-
-  .icon {
-    width: 8em;
-    margin: 21%;
-  }
-
-  .nav-container {
-    display: none;
-  }
-}
 @media only screen and (min-width: 1025px) {
 
   body {
-    width: 75%;
+    width: 47%;
+    margin: auto;
   }
 
 /* Primary Grid */
   #container {
     display: grid;
-    grid-template-columns: repeat(3, minmax(15em, 20em));
-    grid-template-rows: repeat(4, minmax(15em, 20em));
+    grid-template-columns: 17em 17em 17em;
+    grid-template-rows: 6.25em 17em 17em 17em;
     grid-gap: 2em;
     grid-template-areas:
     "logo nav nav"
@@ -258,12 +194,12 @@ footer {
     grid-area: logo;
   }
 
-  .img1 .img2 .img3 .img4 .img5 .img6 .img7 .img8 .img9 {
-    grid-area: img;
-  }
-
   .nav-container {
     grid-area: nav;
+  }
+
+  .img1 .img2 .img3 .img4 .img5 .img6 .img7 .img8 .img9 {
+    grid-area: img;
   }
 
 /* Navigation Bar */
@@ -271,6 +207,7 @@ footer {
   .nav-container {
     display: flex;
     justify-content: space-around;
+    border-radius: 15px
   }
 
 /* Gray to color transition */
@@ -291,6 +228,10 @@ footer {
 
 /* Things to ignore */
   .foot-nav-container {
+    display: none;
+  }
+
+  footer {
     display: none;
   }
 }
