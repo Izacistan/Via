@@ -171,12 +171,13 @@ footer {
 @media only screen and (min-width: 1025px) {
 
   body {
-    width: 53%;
+    width: 65%;
     margin: auto;
   }
 
 /* Primary Grid */
   #container {
+    margin: 5em;
     display: grid;
     grid-template-columns: 10em 17em 17em 17em;
     grid-template-rows: 17em 17em 17em;
