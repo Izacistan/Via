@@ -6,7 +6,6 @@
 
 body {
   background: #F5F5F5;
-  margin: 0;
 }
 
 /************************************************* Main Grid layout */
@@ -171,14 +170,14 @@ footer {
 @media only screen and (min-width: 1025px) {
 
   body {
-    width: 47%;
+    width: 50%;
     margin: auto;
   }
 
 /* Primary Grid */
   #container {
     display: grid;
-    grid-template-columns: 17em 17em 17em;
+    grid-template-columns: repeat(3, 17em);
     grid-template-rows: 6.25em 17em 17em 17em;
     grid-gap: 2em;
     grid-template-areas:
