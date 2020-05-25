@@ -96,6 +96,10 @@ footer {
 
 /* Things to ignore */
 
+  .phoneNum {
+    display: none;
+  }
+
  .about {
    display: none;
  }
@@ -179,7 +183,7 @@ footer {
   #container {
     margin: 5em;
     display: grid;
-    grid-template-columns: 10em 17em 17em 17em;
+    grid-template-columns: 17em 17em 17em 17em;
     grid-template-rows: 17em 17em 17em;
     grid-gap: 2em;
     grid-template-areas:
@@ -204,10 +208,22 @@ footer {
 
 /* Navigation Bar */
 
+  .phoneNum {
+    color: white;
+    font-family: Spartan;
+    font-size: 1.7em;
+    display: inline-block;
+  }
+
+  #phoneButton {
+    display: none;
+  }
+
   .nav-container {
     display: flex;
     justify-content: space-around;
     flex-direction: column;
+    text-align: center;
     border-radius: 15px
   }
 
@@ -239,6 +255,7 @@ footer {
   }
 
 /* Things to ignore */
+
   .foot-nav-container {
     display: none;
   }
