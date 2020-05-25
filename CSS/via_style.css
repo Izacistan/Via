@@ -211,7 +211,8 @@ footer {
   .phoneNum {
     color: white;
     font-family: Spartan;
-    font-size: 1.7em;
+    font-weight: lighter;
+    font-size: 1.8em;
     display: inline-block;
   }
 
