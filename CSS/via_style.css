@@ -174,13 +174,7 @@ footer {
 @media only screen and (min-width: 1025px) {
 
   body {
-<<<<<<< HEAD
-    width: 50%;
-||||||| merged common ancestors
-    width: 47%;
-=======
     width: 65%;
->>>>>>> desktop-vert-nav
     margin: auto;
   }
 
