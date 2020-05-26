@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #F5F5F5;
+}
+
+/************************************************* Main Grid layout */
+
+#container {
+  margin-top: 1em;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 4.75em 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 1em;
+}
+
+/************************************************* Nav Bar and Button Styles */
+
+.nav-container {
+  background-color: black;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: 4.75em;
+}
+
+.button {
+  font-family: Spartan;
+  border: none;
+  color: white;
+  font-size: 23px;
+  padding: 1.1em;
+  text-decoration: none;
+}
+
+/************************************************* Image Styling */
+
+.logo {
+  object-fit: contain;
+}
+
+img {
+  object-fit: cover;
+  display: block;
+  width: 100%; /* Tells element to take up 100% of the container */
+  height: 100%; /* Prevents the content in the container from overflowing. Perfectly scales image containers. */
+
+}
+
+/************************************************************************ Footer Stlyes */
+
+.contactBar {
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-family: Spartan;
+  padding: 25px;
+  font-size: 25px;
+  background-color: black;
+  width: 100%;
+  height: 3em;
+}
+
+.foot-nav-container {
+  background-color: white;
+  display: flex;
+  width: 100%;
+  height: 150px;
+}
+
+a {
+  display: flex;
+  justify-content: center;
+}
+
+.icon {
+  width: 55%;
+  object-fit: contain;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  font-family: Spartan;
+  text-align: center;
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  padding: 20px;
+}
+
+/* Things to ignore */
+
+  .phoneNum {
+    display: none;
+  }
+
+ .about {
+   display: none;
+ }
+
+/************************************************************************ Media Queries */
+
+@media only screen and (min-width: 640px){
+
+  #container {
+    display: grid;
+    grid-gap: 1em;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 100px 1fr 1fr 1fr 100px;
+    grid-template-areas:
+    "logo nav nav"
+    "img img img"
+    "img img img"
+    "img img img"
+    "f-text f-text foot";
+  }
+
+/* Grid Area Assignments */
+
+  .logo {
+    grid-area: logo;
+  }
+
+  .img1 .img2 .img3 .img4 .img5 .img6 .img7 .img8 .img9 {
+    grid-area: img;
+  }
+
+  .nav-container {
+    grid-area: nav;
+  }
+
+  footer {
+    grid-area: f-text;
+    border-radius: 0 15px 0 0;
+  }
+
+  .foot-nav-container {
+    grid-area: foot;
+  }
+/* Nav Bar and Button Styles */
+
+  .nav-container {
+    border-radius: 15px 0 0 15px;
+    height: 100%;
+  }
+
+  .button {
+    border-radius: 15px;
+    padding: 1.7em;
+  }
+
+/* Footer Styles */
+
+  .foot-nav-container {
+    height: 100%;
+    background-color: #F5F5F5;
+  }
+
+  .icon {
+    width: 70%;
+  }
+
+  .contactBar {
+    display: none;
+  }
+
+}
+
+@media only screen and (min-width: 1025px) {
+
+  body {
+    width: 65%;
+    margin: auto;
+  }
+
+/* Primary Grid */
+  #container {
+    margin: 5em;
+    display: grid;
+    grid-template-columns: 17em 17em 17em 17em;
+    grid-template-rows: 17em 17em 17em;
+    grid-gap: 2em;
+    grid-template-areas:
+    "logo img img img"
+    "nav img img img"
+    "nav img img img";
+  }
+
+/* Grid Area assignments */
+
+  .logo {
+    grid-area: logo;
+  }
+
+  .nav-container {
+    grid-area: nav;
+  }
+
+  .img1 .img2 .img3 .img4 .img5 .img6 .img7 .img8 .img9 {
+    grid-area: img;
+  }
+
+/* Navigation Bar */
+
+  .phoneNum {
+    color: white;
+    font-family: Spartan;
+    font-weight: lighter;
+    font-size: 1.8em;
+    display: inline-block;
+  }
+
+  #phoneButton {
+    display: none;
+  }
+
+  .nav-container {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 15px
+  }
+
+  .button {
+    font-size: 1.7em;
+    transition: .2s ease-in-out;
+  }
+
+  .button:hover {
+    transform: scale(1.2);
+    color: pink;
+    font-weight: 150;
+  }
+
+/* Gray to color transition */
+  img {
+    transition: .3s ease-in-out;
+    border-radius: 15px;
+    filter: grayscale(100%);
+  }
+
+  img:hover {
+    transform: scale(1.1);
+    filter: grayscale(0%);
+  }
+
+  .logo:hover {
+    transform: none; /* Prevents logo from enlarging when hvoering */
+  }
+
+/* Things to ignore */
+
+  .foot-nav-container {
+    display: none;
+  }
+
+  footer {
+    display: none;
+  }
+}
