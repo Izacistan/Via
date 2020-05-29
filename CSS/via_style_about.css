@@ -36,6 +36,15 @@ body {
   text-decoration: none;
 }
 
+/************************************************* Paragraph Styling  */
+
+  .description {
+    font-family: Spartan;
+    line-height: 1.7;
+    padding: 1.2em;
+    background-color: white;
+  }
+
 /************************************************* Image Styling */
 
 .logo {
