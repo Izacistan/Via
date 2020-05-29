@@ -118,13 +118,12 @@ footer {
   #container {
     display: grid;
     grid-gap: 1em;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 100px 1fr 1fr 1fr 100px;
+    grid-template-columns: 1fr 300px 1fr;
+    grid-template-rows: 100px 300px 1fr 100px;
     grid-template-areas:
     "logo nav nav"
-    "img img img"
-    "img img img"
-    "img img img"
+    ".... img ..."
+    "txt txt txt"
     "f-text f-text foot";
   }
 
@@ -134,8 +133,12 @@ footer {
     grid-area: logo;
   }
 
-  .img1 .img2 .img3 .img4 .img5 .img6 .img7 .img8 .img9 {
+  .img1 {
     grid-area: img;
+  }
+
+  .description {
+    grid-area: txt;
   }
 
   .nav-container {
@@ -159,6 +162,16 @@ footer {
 
   .button {
     border-radius: 15px;
+  }
+
+/* Image Styling and Paragraph Styling */
+
+  .img1 {
+    border-radius: 180px; /* Switch to 15px to match other images on site. */
+  }
+
+  .description {
+    margin-top: 0;
   }
 
 /* Footer Styles */
