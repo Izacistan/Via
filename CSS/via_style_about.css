@@ -206,23 +206,17 @@ footer {
     grid-template-rows: 17em 17em 17em;
     grid-gap: 2em;
     grid-template-areas:
-    "logo img img img"
-    "nav img img img"
-    "nav img img img";
+    "logo ... img ..."
+    "nav txt txt txt"
+    "nav txt txt txt";
   }
+/* Paragraph card styling */
 
-/* Grid Area assignments */
-
-  .logo {
-    grid-area: logo;
-  }
-
-  .nav-container {
-    grid-area: nav;
-  }
-
-  .img1 .img2 .img3 .img4 .img5 .img6 .img7 .img8 .img9 {
-    grid-area: img;
+  .description {
+    display: flex;
+    line-height: 3;
+    align-items: center;
+    border-radius: 15px;
   }
 
 /* Navigation Bar */
