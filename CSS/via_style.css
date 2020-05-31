@@ -18,25 +18,23 @@ body {
   grid-gap: 1em;
 }
 
-/************************************************* Nav Bar and Button Styles */
+/************************************************* Main Navigation Bar and Button Styles */
 
 .nav-container {
   background-color: black;
   display: flex;
   justify-content: space-around;
-  flex-direction: row;
   align-items: center;
 }
 
 .button {
   font-family: Spartan;
-  border: none;
   color: white;
   font-size: 1.1em;
   text-decoration: none;
 }
 
-/************************************************* Image Styling */
+/************************************************* Image Styling for Main Gallery */
 
 .logo {
   object-fit: contain;
@@ -50,14 +48,14 @@ img {
 
 }
 
-/************************************************************************ Footer Stlyes */
+/************************************************************************ Footer Styles */
 
 .contactBar {
   display: flex;
   justify-content: center;
+  align-items: center;
   color: white;
   font-family: Spartan;
-  padding: 25px;
   font-size: 25px;
   background-color: black;
   width: 100%;
@@ -92,7 +90,7 @@ footer {
   padding: 20px;
 }
 
-/* Things to ignore */
+/************************************************************************ Things to ignore */
 
   .phoneNum {
     display: none;
@@ -102,7 +100,7 @@ footer {
    display: none;
  }
 
-/************************************************************************ Media Queries */
+/************************************************************************ MEDIA QUERIES */
 
 @media only screen and (min-width: 640px){
 
@@ -119,7 +117,7 @@ footer {
     "f-text f-text foot";
   }
 
-/* Grid Area Assignments */
+/****************************************************************************** Grid Area Assignments */
 
   .logo {
     grid-area: logo;
@@ -141,7 +139,8 @@ footer {
   .foot-nav-container {
     grid-area: foot;
   }
-/* Nav Bar and Button Styles */
+
+/****************************************************************************** Main Navigation Bar and Button Styles */
 
   .nav-container {
     border-radius: 15px 0 0 15px;
@@ -152,7 +151,7 @@ footer {
     border-radius: 15px;
   }
 
-/* Footer Styles */
+/******************************************************************************* Footer Styles */
 
   .foot-nav-container {
     height: 100%;
@@ -176,7 +175,7 @@ footer {
     margin: auto;
   }
 
-/* Primary Grid */
+/****************************************************************************** Laptop/Desktop Grid Layout */
   #container {
     margin: 5em;
     display: grid;
@@ -189,21 +188,7 @@ footer {
     "nav img img img";
   }
 
-/* Grid Area assignments */
-
-  .logo {
-    grid-area: logo;
-  }
-
-  .nav-container {
-    grid-area: nav;
-  }
-
-  .img1 .img2 .img3 .img4 .img5 .img6 .img7 .img8 .img9 {
-    grid-area: img;
-  }
-
-/* Navigation Bar */
+/******************************************************************************* Main Navigation Bar */
 
   .phoneNum {
     color: white;
@@ -236,7 +221,7 @@ footer {
     font-weight: 150;
   }
 
-/* Gray to color transition */
+/******************************************************************************* Gray to color transition on hover*/
   img {
     transition: .3s ease-in-out;
     border-radius: 15px;
@@ -249,7 +234,7 @@ footer {
   }
 
   .logo:hover {
-    transform: none; /* Prevents logo from enlarging when hvoering */
+    transform: none; /* Prevents logo from enlarging when hovering */
   }
 
 /* Things to ignore */
