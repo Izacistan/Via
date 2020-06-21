@@ -132,7 +132,7 @@ footer {
     grid-area: logo;
   }
 
-  .img1 {
+  .profile_pic {
     grid-area: img;
   }
 
@@ -166,7 +166,7 @@ footer {
 
 /******************************************************************************* Image Styling and Paragraph Styling */
 
-  .img1 {
+  .profile_pic {
     border-radius: 180px; /* Switch to 15px to match other images on site, if desired. */
   }
 
@@ -262,6 +262,10 @@ footer {
   img:hover {
     transform: scale(1.1);
     filter: grayscale(0%);
+  }
+
+  .profile_pic:hover {
+    transform: none; /* Prevent profile picture from enlarging on hover. */
   }
 
   .logo:hover {
