@@ -14,7 +14,7 @@ body {
   margin-top: 1em;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 4.75em 1fr;
+  grid-template-rows: 21.875em 4.75em 21.875em;
   grid-gap: 1em;
 }
 
@@ -247,7 +247,6 @@ footer {
   }
 
   .button:hover {
-    transform: scale(1.2);
     color: pink;
     font-weight: 150;
   }
