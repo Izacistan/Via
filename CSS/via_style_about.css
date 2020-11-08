@@ -202,10 +202,10 @@ footer {
 
 /******************************************************************************* Primary Grid */
   #container {
-    margin: 5em;
+    justify-content: center;
     display: grid;
-    grid-template-columns: 17em 17em 17em 17em;
-    grid-template-rows: 17em 17em 17em;
+    grid-template-columns: repeat(4, 16em);
+    grid-template-rows: repeat(3, 16em);
     grid-gap: 2em;
     grid-template-areas:
     "logo ... img ..."

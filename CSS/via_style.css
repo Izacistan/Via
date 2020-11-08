@@ -180,18 +180,15 @@ footer {
   }
 
 /****************************************************************************** Laptop/Desktop Grid Layout */
-  #container {
-    margin: 5em;
-    display: grid;
-    grid-template-columns: 17em 17em 17em 17em;
-    grid-template-rows: 17em 17em 17em;
-    grid-gap: 2em;
-    grid-template-areas:
-    "logo img img img"
-    "nav img img img"
-    "nav img img img";
-    height: auto;
-  }
+#container {
+  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(4, 16em);
+  grid-template-rows: repeat(3, 16em);
+  grid-gap: 2em;
+  grid-template-areas: "logo img img img" "nav img img img" "nav img img img";
+  height: auto;
+}
 
 /******************************************************************************* Main Navigation Bar */
 
