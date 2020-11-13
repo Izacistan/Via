@@ -244,12 +244,13 @@ footer {
     justify-content: center;
     display: grid;
     grid-template-columns: repeat(4, 16em);
-    grid-template-rows: repeat(3, 16em);
+    grid-template-rows: repeat(3, 16em) 3em;
     grid-gap: 2em;
     grid-template-areas:
     "logo ... img ..."
     "nav txt txt txt"
-    "nav txt txt txt";
+    "nav txt txt txt"
+    "social ... ... ...";
     height: auto;
   }
 /******************************************************************************* Paragraph card styling */
@@ -293,6 +294,16 @@ footer {
     font-weight: 150;
   }
 
+  .socialMenuMobile {
+    background-color: #F5F5F5;
+    grid-area: social;
+  }
+
+  .iconSocialMobile {
+    height: 3em;
+    margin: 0px;
+  }
+
 /******************************************************************************* Gray to color transition */
   img {
     transition: .3s ease-in-out;
@@ -315,11 +326,19 @@ footer {
 
 /* Things to ignore */
 
-  .foot-nav-container {
-    display: none;
-  }
+.foot-nav-container {
+  display: none;
+}
 
-  footer {
-    display: none;
-  }
+footer {
+  display: none;
+}
+
+.mobileFooter {
+  display: none;
+}
+
+.followMe {
+  display: none;
+}
 }

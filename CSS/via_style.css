@@ -232,7 +232,11 @@ footer {
   grid-template-columns: repeat(4, 16em);
   grid-template-rows: repeat(3, 16em) 3em;
   grid-gap: 2em;
-  grid-template-areas: "logo img img img" "nav img img img" "nav img img img";
+  grid-template-areas:
+  "logo img img img"
+  "nav img img img"
+  "nav img img img"
+  "social ... ... ...";
   height: auto;
 }
 
@@ -268,6 +272,15 @@ footer {
     font-weight: 150;
   }
 
+  .socialMenuMobile {
+    background-color: #F5F5F5;
+    grid-area: social;
+  }
+
+  .iconSocialMobile {
+    height: 3em;
+    margin: 0px;
+  }
 /******************************************************************************* Gray to color transition on hover*/
   img {
     transition: .3s ease-in-out;
@@ -291,6 +304,14 @@ footer {
   }
 
   footer {
+    display: none;
+  }
+
+  .mobileFooter {
+    display: none;
+  }
+
+  .followMe {
     display: none;
   }
 }
