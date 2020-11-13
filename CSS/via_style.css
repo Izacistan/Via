@@ -90,6 +90,31 @@ footer {
   padding: 20px;
 }
 
+.mobileFooter {
+  display: flex;
+  flex-direction: column;
+}
+
+.socialMenuMobile {
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+}
+
+.followMe {
+  font-family: Spartan;
+  text-align: center;
+  background-color: black;
+  color: white;
+  font-size: 15px;
+}
+
+.iconSocialMobile {
+  height: 4em;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
 /************************************************************************ Things to ignore */
 
   .phoneNum {
@@ -100,6 +125,9 @@ footer {
    display: none;
  }
 
+.socialMenu {
+  display: none;
+}
 
  /*********************************************************************** FEATURE QUERIES */
 
@@ -117,7 +145,8 @@ footer {
     "img img img"
     "img img img"
     "img img img"
-    "f-text f-text foot";
+    "f-text f-text f-text"
+    "foot foot social";
     height: 1024px;
   }
 
@@ -137,11 +166,26 @@ footer {
 
   footer {
     grid-area: f-text;
-    border-radius: 0 15px 0 0;
+    border-radius: 0 15px 15px 0;
+  }
+
+  .socialMenuMobile {
+    grid-area: social;
+    border-radius: 15px 15px 0 0;
+  }
+
+  .mobileFooterText {
+    margin: 0.5em;
+}
+
+  .iconSocialMobile {
+    height: 4.5em;
+    margin: 0px;
   }
 
   .foot-nav-container {
     grid-area: foot;
+    padding: 10px;
   }
 
 /****************************************************************************** Main Navigation Bar and Button Styles */
@@ -163,7 +207,7 @@ footer {
   }
 
   .icon {
-    width: 70%;
+    width: 50%;
   }
 
   .contactBar {
@@ -174,17 +218,12 @@ footer {
 
 @media only screen and (min-width: 1025px) {
 
-  body {
-    width: 75%;
-    margin: auto;
-  }
-
 /****************************************************************************** Laptop/Desktop Grid Layout */
 #container {
   justify-content: center;
   display: grid;
   grid-template-columns: repeat(4, 16em);
-  grid-template-rows: repeat(3, 16em);
+  grid-template-rows: repeat(3, 16em) 3em;
   grid-gap: 2em;
   grid-template-areas: "logo img img img" "nav img img img" "nav img img img";
   height: auto;
