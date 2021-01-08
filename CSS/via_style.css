@@ -17,6 +17,7 @@ PRIMARY GRID SETTINGS
   display: grid;
   grid-gap: 10px;
   grid-auto-columns: 1fr;
+  grid-template-rows: 1fr 65px repeat(9, 1fr) 1fr;
   font-family: Spartan;
 }
 
@@ -82,6 +83,7 @@ FOOTER STYLES
   background-color: black;
   color: white;
   font-size: 2em;
+  padding-bottom: 25px;
 }
 
 .footTxt {
@@ -90,7 +92,7 @@ FOOTER STYLES
   font-size: 1.2em;
 }
 
-/* Contact Icons */
+/* CONTACT Icons */
 
 .iconContainer {
   display: flex;
@@ -105,9 +107,12 @@ FOOTER STYLES
   width: 100px;
 }
 
-
-
 /* INSTAGRAM link */
+
+.divider {
+  border: 1px solid grey;
+  width: 75%;
+}
 
 #socialMenu {
   display: flex;
@@ -124,7 +129,6 @@ FOOTER STYLES
 }
 
 /* Things to ignore */
-
 
 .phoneNumTxt {
   display: none;
