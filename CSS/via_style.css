@@ -8,310 +8,45 @@ body {
   background: #F5F5F5;
 }
 
-/************************************************* Main Grid layout */
+/* PRIMARY GRID SETTINGS */
 
-#container {
-  margin-top: 1em;
+#mainContainer {
+  height: 100vh;
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 21.875em 4.75em repeat(9, 24em);
-  grid-gap: 1em;
+  grid-auto-columns: 1fr;
+  grid-auto-row: 1fr;
 }
 
-/************************************************* Main Navigation Bar and Button Styles */
+/* Main Navigation */
 
-.nav-container {
-  background-color: black;
+.navContainer {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-around; 
+}
+
+/***** Main Gallery Image Styling and Sizing *****/
+
+.img {
+  width: 100%;
+}
+
+/************************************* FOOTER STYLES */
+
+#footContainer {
+  display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
-.button {
-  font-family: Spartan;
-  color: white;
-  font-size: 1.1em;
-  text-decoration: none;
-}
-
-/************************************************* Image Styling for Main Gallery */
-
-.logo {
-  object-fit: contain;
-}
-
-img {
-  object-fit: cover;
-  display: block;
-  width: 100%; /* Tells element to take up 100% of the container */
-  height: 100%; /* Prevents the content in the container from overflowing. Perfectly scales image containers. */
-
-}
-
-/************************************************************************ Footer Styles */
-
-.contactBar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  font-family: Spartan;
-  font-size: 25px;
-  background-color: black;
-  width: 100%;
-  height: 3em;
-}
-
-.foot-nav-container {
-  background-color: white;
-  display: flex;
-  width: 100%;
-  height: 150px;
-}
-
-a {
-  display: flex;
-  justify-content: center;
-}
-
-.icon {
-  width: 55%;
-  object-fit: contain;
-}
-
-footer {
-  display: flex;
-  justify-content: center;
-  font-family: Spartan;
-  text-align: center;
-  background-color: black;
-  color: white;
-  font-size: 20px;
-  padding: 20px;
-}
-
-.mobileFooter {
-  display: flex;
-  flex-direction: column;
-}
-
-.socialMenuMobile {
-  display: flex;
-  flex-direction: column;
-  background-color: black;
-}
-
-.followMe {
-  font-family: Spartan;
-  text-align: center;
-  background-color: black;
-  color: white;
-  font-size: 15px;
-}
+/* INSTAGRAM link */
 
 .iconSocialMobile {
-  height: 4em;
-  object-fit: contain;
-  margin-bottom: 10px;
+  width: 70px;
 }
-
-/************************************************************************ Things to ignore */
-
-  .phoneNum {
-    display: none;
-  }
-
- .about {
-   display: none;
- }
-
-.socialMenu {
-  display: none;
-}
-
- /*********************************************************************** FEATURE QUERIES */
-
-/************************************************************************ MEDIA QUERIES */
-
-@media only screen and (min-width: 640px){
-
-  #container {
-    display: grid;
-    grid-gap: 1em;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 100px repeat(3, 1fr) 100px;
-    grid-template-areas:
-    "logo nav nav"
-    "img img img"
-    "img img img"
-    "img img img"
-    "f-text f-text f-text"
-    "foot foot social";
-    height: 1024px;
-  }
-
-/****************************************************************************** Grid Area Assignments */
-
-  .logo {
-    grid-area: logo;
-  }
-
-  .img1 .img2 .img3 .img4 .img5 .img6 .img7 .img8 .img9 {
-    grid-area: img;
-  }
-
-  .nav-container {
-    grid-area: nav;
-  }
-
-  footer {
-    grid-area: f-text;
-    border-radius: 0 15px 15px 0;
-  }
-
-  .socialMenuMobile {
-    grid-area: social;
-    border-radius: 15px 15px 0 0;
-  }
-
-  .mobileFooterText {
-    margin: 0.5em;
-}
-
-  .iconSocialMobile {
-    height: 4.5em;
-    margin: 0px;
-  }
-
-  .foot-nav-container {
-    grid-area: foot;
-    padding: 10px;
-  }
-
-/****************************************************************************** Main Navigation Bar and Button Styles */
-
-  .nav-container {
-    border-radius: 15px 0 0 15px;
-    height: 100%;
-  }
-
-  .button {
-    border-radius: 15px;
-  }
-
-/******************************************************************************* Footer Styles */
-
-  .foot-nav-container {
-    height: 100%;
-    background-color: #F5F5F5;
-  }
-
-  .icon {
-    width: 50%;
-  }
-
-  .contactBar {
-    display: none;
-  }
-
-}
-
-@media only screen and (min-width: 800px){
-
-  #container {
-    grid-template-rows: 100px repeat(3, 18em) 100px;
-  }
-
-
-@media only screen and (min-width: 1025px) {
-
-/****************************************************************************** Laptop/Desktop Grid Layout */
-#container {
-  justify-content: center;
-  display: grid;
-  grid-template-columns: repeat(4, 16em);
-  grid-template-rows: repeat(3, 16em) 3em;
-  grid-gap: 2em;
-  grid-template-areas:
-  "logo img img img"
-  "nav img img img"
-  "nav img img img"
-  "social ... ... ...";
-  height: auto;
-}
-
-/******************************************************************************* Main Navigation Bar */
-
-  .phoneNum {
-    color: white;
-    font-family: Spartan;
-    font-weight: lighter;
-    font-size: 1.7em;
-    display: inline-block;
-  }
-
-  #phoneButton {
-    display: none;
-  }
-
-  .nav-container {
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-    text-align: center;
-    border-radius: 15px
-  }
-
-  .button {
-    font-size: 2em;
-    transition: .2s ease-in-out;
-  }
-
-  .button:hover {
-    color: pink;
-    font-weight: 150;
-  }
-
-  .socialMenuMobile {
-    background-color: #F5F5F5;
-    grid-area: social;
-  }
-
-  .iconSocialMobile {
-    height: 3em;
-    margin: 0px;
-  }
-/******************************************************************************* Gray to color transition on hover*/
-  img {
-    transition: .3s ease-in-out;
-    border-radius: 15px;
-    filter: grayscale(100%);
-  }
-
-  img:hover {
-    transform: scale(1.1);
-    filter: grayscale(0%);
-  }
-
-  .logo:hover {
-    transform: none; /* Prevents logo from enlarging when hovering */
-  }
 
 /* Things to ignore */
 
-  .foot-nav-container {
-    display: none;
-  }
 
-  footer {
-    display: none;
-  }
-
-  .mobileFooter {
-    display: none;
-  }
-
-  .followMe {
-    display: none;
-  }
+.phoneNumTxt {
+  display: none;
 }
