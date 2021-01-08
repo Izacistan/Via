@@ -21,24 +21,10 @@ PRIMARY GRID SETTINGS
   font-family: Spartan;
 }
 
-/* Grid Area Assignments */
-
-/* .logo {
-  grid-area: logo;
-}
-
-.navContainer {
-  grid-area: nav;
-}
-
-.img {
-  grid-area: img;
-} */
-
-
 /* Main Container Settings */
 
 .logo {
+  width: 100%;
   margin-top: 0.5em;
 }
 
@@ -65,6 +51,7 @@ PRIMARY GRID SETTINGS
 
 .img {
   width: 100%;
+  object-fit: cover;
 }
 
 /*==========
@@ -132,4 +119,43 @@ FOOTER STYLES
 
 .phoneNumTxt {
   display: none;
+}
+
+@media only screen and (min-width: 640px) {
+
+  /* Gird Area Assignments */
+
+  .logo {
+    grid-area: logo;
+    object-fit: contain;
+    height: 100px;
+  }
+
+  .navContainer {
+    grid-area: nav;
+    height: 100px;
+    border-radius: 15px 0 0 15px;
+  }
+
+  .img {
+    height: 60vh;
+  }
+
+  #footContainer {
+    grid-area: foot;
+  }
+
+  #mainContainer {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 125px repeat(3, 1fr) 1fr;
+    grid-template-areas:
+
+    "logo nav nav"
+    "img img img"
+    "img img img"
+    "img img img"
+    "foot foot foot"
+
+    ;
+  }
 }
