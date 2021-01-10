@@ -137,8 +137,12 @@ FOOTER STYLES
     border-radius: 15px 0 0 15px;
   }
 
+  .button {
+    font-size: 1.3em;
+  }
+
   .img {
-    height: 60vh;
+    height: 100%;
   }
 
   #footContainer {
@@ -147,7 +151,7 @@ FOOTER STYLES
 
   #mainContainer {
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 125px repeat(3, 1fr) 1fr;
+    grid-template-rows: 125px repeat(3, 35vw) 1fr;
     grid-template-areas:
 
     "logo nav nav"
