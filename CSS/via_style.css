@@ -1,5 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Spartan&display=swap');
 
+/*==========================================
+Making Flexible Image Gallery using CSS GRID
+
+--- 1) Set necessary images height/width to 100% (to take up 100% on their availble space in the container) and 'object-fit: cover;' is applied
+--- 2) When laying out 'grid-template-rows' make sure any rows your images appear on have 'vw' units assigned to them (must be same width in all image rows).
+--- 3) You will need to adjust 'vw' units as needed to achieve the correct dimensions. This is done by eyeballing it.
+--- 4) Once complete, your images should retain their dimensions/resolutions and adjust to any screen size properly, though depending on the design, you may need to use media queries.
+
+=====================================================================================================================================================================================*/
+
+/* Universal Styles */
+
 * {
   box-sizing: border-box;
 }
@@ -9,7 +21,7 @@ body {
 }
 
 /*==============
-PRIMARY GRID SETTINGS
+PRIMARY GRID SETTINGS / Main Container Styles
 ===================*/
 
 #mainContainer {
@@ -20,8 +32,6 @@ PRIMARY GRID SETTINGS
   grid-template-rows: 1fr 65px repeat(9, 1fr) 1fr;
   font-family: Spartan;
 }
-
-/* Main Container Settings */
 
 .logo {
   width: 75%;
@@ -34,8 +44,8 @@ PRIMARY GRID SETTINGS
 
 .navContainer {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  justify-content: space-around; /* Put ample Space between Menu items */
+  align-items: center; /* Center menu items within Nav bar */
   background-color: black;
   margin-top: 1em;
   height: 65px;
@@ -47,7 +57,9 @@ PRIMARY GRID SETTINGS
   margin: 1em;
 }
 
-/***** Main Gallery Image Styling and Sizing *****/
+/*====================================
+Main Gallery Image Styling and Sizing
+=====================================*/
 
 .img {
   width: 100%;
@@ -60,10 +72,10 @@ FOOTER STYLES
 
 #footContainer {
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* Set to Row by default. Stack Footer vertically for mobile devices. */
   align-items: center;
   background-color: black;
-  padding: 25px 0 10px 0;
+  padding: 25px 0 10px 0; /* Gives footer more space to breath, between footer and main images */
 }
 
 .contactBarTxt {
@@ -115,7 +127,7 @@ FOOTER STYLES
   width: 70px;
 }
 
-/* Things to ignore */
+/* Things to ignore / HTML Elements I do not want to appear on mobile*/
 
 .phoneNumTxt {
   display: none;
@@ -123,7 +135,25 @@ FOOTER STYLES
 
 @media only screen and (min-width: 640px) {
 
-  /* Gird Area Assignments */
+  /*===================================================================================
+  Setup Main GRID / Horizontal views mobile, and flexible for vert/horz views on Tablets
+  =====================================================================================*/
+
+  #mainContainer {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 125px repeat(3, 35vw) 1fr;
+    grid-template-areas: /* Use Grid Areas to accurately layout content exactly where needed */
+
+    "logo nav nav"
+    "img img img"
+    "img img img"
+    "img img img"
+    "foot foot foot"
+
+    ;
+  }
+
+  /* Logo and Navigation */
 
   .logo {
     grid-area: logo;
@@ -141,34 +171,30 @@ FOOTER STYLES
     font-size: 1.3em;
   }
 
+  /* Main Gallery of Images */
+
   .img {
     height: 100%;
   }
+
+  /* Foot Container */
 
   #footContainer {
     grid-area: foot;
   }
 
-  #mainContainer {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 125px repeat(3, 35vw) 1fr;
-    grid-template-areas:
-
-    "logo nav nav"
-    "img img img"
-    "img img img"
-    "img img img"
-    "foot foot foot"
-
-    ;
-  }
 }
 
 @media only screen and (min-width: 1025px) {
 
+  /*=============================================================
+  Setup MAIN Grid / Flexible grid for Laptop/Desktop screen sizes
+   ============================================================*/
+
   #mainContainer {
-    width: 80%;
-    margin: auto;
+    width: 80%; /* This makes the whole container slightly smaller than available screen space. */
+    margin: auto; /* Perfeclty center entire menu on screen */
+    margin-top: 2em;
     grid-gap: 1.6em;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(3, 18vw) 300px;
@@ -189,11 +215,11 @@ FOOTER STYLES
   }
 
   .navContainer {
-    flex-direction: column;
+    flex-direction: column; /* Had been set to Row on smaller screens, but we want it stacked on larger screens */
     height: 100%;
-    width: 80%;
+    width: 80%; /* Allows Navigation to be slightly thinner than image gallery */
     border-radius: 15px;
-    margin: auto;
+    margin: auto; /* Perfectly center the Navigation menu */
   }
 
   .button {
@@ -214,8 +240,8 @@ FOOTER STYLES
     filter:grayscale(100%);
   }
 
-  .img:hover {
-      transform: scale(1.1);
+  .img:hover { /* Turns pictures from Gray to Color on hover */
+      transform: scale(1.1); /* Makes images expand on hover */
       filter: grayscale(0%);
   }
 
@@ -223,6 +249,7 @@ FOOTER STYLES
 
   #footContainer {
     background-color: #f5f5f5;
+    margin: -2em; /* Cuts down on whitespace between Image Gallery and Foot Container */
   }
 
   .footTxt {
@@ -234,7 +261,16 @@ FOOTER STYLES
     font-size: 1.2em;
   }
 
-/* HTML Elements to Ignore */
+/* Setup Gray to Color Animation on Hover */
+  .iconSocialMobile {
+    filter: grayscale(100%);
+    transition: 0.3s;
+  }
+
+  .iconSocialMobile:hover {
+    filter: grayscale(0%);
+  }
+/* HTML Elements to Ignore / Things I don't want on large screens*/
 
   .contactBarTxt {
     display: none;
