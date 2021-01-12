@@ -1,5 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Spartan&display=swap');
 
+/*==========================================
+Making Flexible Image Gallery using CSS GRID
+
+--- 1) Set necessary images height/width to 100% (to take up 100% on their availble space in the container) and 'object-fit: cover;' is applied
+--- 2) When laying out 'grid-template-rows' make sure any rows your images appear on have 'vw' units assigned to them (must be same width in all image rows).
+--- 3) You will need to adjust 'vw' units as needed to achieve the correct dimensions. This is done by eyeballing it.
+--- 4) Once complete, your images should retain their dimensions/resolutions and adjust to any screen size properly, though depending on the design, you may need to use media queries.
+
+=====================================================================================================================================================================================*/
+
+/* Universal Styles */
+
 * {
   box-sizing: border-box;
 }
@@ -8,310 +20,277 @@ body {
   background: #F5F5F5;
 }
 
-/************************************************* Main Grid layout */
+/*==============
+PRIMARY GRID SETTINGS / Main Container Styles
+===================*/
 
-#container {
-  margin-top: 1em;
+#mainContainer {
+  height: 100vh;
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 21.875em 4.75em repeat(9, 24em);
-  grid-gap: 1em;
+  grid-gap: 10px;
+  grid-auto-columns: 1fr;
+  grid-template-rows: 1fr 65px repeat(9, 1fr) 1fr;
+  font-family: Spartan;
 }
 
-/************************************************* Main Navigation Bar and Button Styles */
+.logo {
+  width: 75%;
+  margin: auto;
+}
 
-.nav-container {
-  background-color: black;
+/*==============
+  Main Navigation
+  ===========*/
+
+.navContainer {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  justify-content: space-around; /* Put ample Space between Menu items */
+  align-items: center; /* Center menu items within Nav bar */
+  background-color: black;
+  margin-top: 1em;
+  height: 65px;
 }
 
 .button {
-  font-family: Spartan;
-  color: white;
-  font-size: 1.1em;
   text-decoration: none;
-}
-
-/************************************************* Image Styling for Main Gallery */
-
-.logo {
-  object-fit: contain;
-}
-
-img {
-  object-fit: cover;
-  display: block;
-  width: 100%; /* Tells element to take up 100% of the container */
-  height: 100%; /* Prevents the content in the container from overflowing. Perfectly scales image containers. */
-
-}
-
-/************************************************************************ Footer Styles */
-
-.contactBar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   color: white;
-  font-family: Spartan;
-  font-size: 25px;
+  margin: 1em;
+}
+
+/*====================================
+Main Gallery Image Styling and Sizing
+=====================================*/
+
+.img {
+  width: 100%;
+  object-fit: cover;
+}
+
+/*==========
+FOOTER STYLES
+===========*/
+
+#footContainer {
+  display: flex;
+  flex-direction: column; /* Set to Row by default. Stack Footer vertically for mobile devices. */
+  align-items: center;
   background-color: black;
-  width: 100%;
-  height: 3em;
+  padding: 25px 0 10px 0; /* Gives footer more space to breath, between footer and main images */
 }
 
-.foot-nav-container {
-  background-color: white;
-  display: flex;
-  width: 100%;
-  height: 150px;
+.contactBarTxt {
+  background-color: black;
+  color: white;
+  font-size: 2em;
+  padding-bottom: 25px;
 }
 
-a {
+.footTxt {
+  background-color: black;
+  color: white;
+  font-size: 1.2em;
+}
+
+/* CONTACT Icons */
+
+.iconContainer {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 125px;
+  background-color: #f5f5f5;
 }
 
 .icon {
-  width: 55%;
-  object-fit: contain;
+  width: 100px;
 }
 
-footer {
-  display: flex;
-  justify-content: center;
-  font-family: Spartan;
-  text-align: center;
-  background-color: black;
+.emailTxt {
   color: white;
-  font-size: 20px;
-  padding: 20px;
 }
 
-.mobileFooter {
+/* INSTAGRAM link */
+
+.divider {
+  border: 1px solid grey;
+  width: 75%;
+}
+
+#socialMenu {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
-.socialMenuMobile {
-  display: flex;
-  flex-direction: column;
-  background-color: black;
-}
-
-.followMe {
-  font-family: Spartan;
-  text-align: center;
-  background-color: black;
+.followMeTxt {
   color: white;
-  font-size: 15px;
 }
 
 .iconSocialMobile {
-  height: 4em;
-  object-fit: contain;
-  margin-bottom: 10px;
+  width: 70px;
 }
 
-/************************************************************************ Things to ignore */
+/* Things to ignore / HTML Elements I do not want to appear on mobile*/
 
-  .phoneNum {
-    display: none;
-  }
-
- .about {
-   display: none;
- }
-
-.socialMenu {
+.phoneNumTxt {
   display: none;
 }
 
- /*********************************************************************** FEATURE QUERIES */
+@media only screen and (min-width: 640px) {
 
-/************************************************************************ MEDIA QUERIES */
+  /*===================================================================================
+  Setup Main GRID / Horizontal views mobile, and flexible for vert/horz views on Tablets
+  =====================================================================================*/
 
-@media only screen and (min-width: 640px){
+  #mainContainer {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 125px repeat(3, 35vw) 1fr;
+    grid-template-areas: /* Use Grid Areas to accurately layout content exactly where needed */
 
-  #container {
-    display: grid;
-    grid-gap: 1em;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 100px repeat(3, 1fr) 100px;
-    grid-template-areas:
     "logo nav nav"
     "img img img"
     "img img img"
     "img img img"
-    "f-text f-text f-text"
-    "foot foot social";
-    height: 1024px;
+    "foot foot foot"
+
+    ;
   }
 
-/****************************************************************************** Grid Area Assignments */
+  /* Logo and Navigation */
 
   .logo {
     grid-area: logo;
+    object-fit: contain;
+    height: 100px;
   }
 
-  .img1 .img2 .img3 .img4 .img5 .img6 .img7 .img8 .img9 {
-    grid-area: img;
-  }
-
-  .nav-container {
+  .navContainer {
     grid-area: nav;
-  }
-
-  footer {
-    grid-area: f-text;
-    border-radius: 0 15px 15px 0;
-  }
-
-  .socialMenuMobile {
-    grid-area: social;
-    border-radius: 15px 15px 0 0;
-  }
-
-  .mobileFooterText {
-    margin: 0.5em;
-}
-
-  .iconSocialMobile {
-    height: 4.5em;
-    margin: 0px;
-  }
-
-  .foot-nav-container {
-    grid-area: foot;
-    padding: 10px;
-  }
-
-/****************************************************************************** Main Navigation Bar and Button Styles */
-
-  .nav-container {
+    height: 100px;
     border-radius: 15px 0 0 15px;
-    height: 100%;
   }
 
   .button {
-    border-radius: 15px;
+    font-size: 1.3em;
   }
 
-/******************************************************************************* Footer Styles */
+  /* Main Gallery of Images */
 
-  .foot-nav-container {
+  .img {
     height: 100%;
-    background-color: #F5F5F5;
   }
 
-  .icon {
-    width: 50%;
-  }
+  /* Foot Container */
 
-  .contactBar {
-    display: none;
+  #footContainer {
+    grid-area: foot;
   }
 
 }
-
-@media only screen and (min-width: 800px){
-
-  #container {
-    grid-template-rows: 100px repeat(3, 18em) 100px;
-  }
-
 
 @media only screen and (min-width: 1025px) {
 
-/****************************************************************************** Laptop/Desktop Grid Layout */
-#container {
-  justify-content: center;
-  display: grid;
-  grid-template-columns: repeat(4, 16em);
-  grid-template-rows: repeat(3, 16em) 3em;
-  grid-gap: 2em;
-  grid-template-areas:
-  "logo img img img"
-  "nav img img img"
-  "nav img img img"
-  "social ... ... ...";
-  height: auto;
-}
+  /*=============================================================
+  Setup MAIN Grid / Flexible grid for Laptop/Desktop screen sizes
+   ============================================================*/
 
-/******************************************************************************* Main Navigation Bar */
+  #mainContainer {
+    width: 80%; /* This makes the whole container slightly smaller than available screen space. */
+    margin: auto; /* Perfeclty center entire menu on screen */
+    margin-top: 2em;
+    grid-gap: 1.6em;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 18vw) 300px;
+    grid-template-areas:
 
-  .phoneNum {
-    color: white;
-    font-family: Spartan;
-    font-weight: lighter;
-    font-size: 1.7em;
-    display: inline-block;
+      "logo img img img"
+      "nav img img img"
+      "nav img img img"
+      "... foot foot ..."
+    ;
+
   }
 
-  #phoneButton {
-    display: none;
+  /* Logo and Main Navigation */
+
+  .logo {
+    height: auto;
   }
 
-  .nav-container {
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-    text-align: center;
-    border-radius: 15px
+  .navContainer {
+    flex-direction: column; /* Had been set to Row on smaller screens, but we want it stacked on larger screens */
+    height: 100%;
+    width: 80%; /* Allows Navigation to be slightly thinner than image gallery */
+    border-radius: 15px;
+    margin: auto; /* Perfectly center the Navigation menu */
   }
 
   .button {
-    font-size: 2em;
-    transition: .2s ease-in-out;
+    font-size: 1.6em
+
   }
 
   .button:hover {
     color: pink;
-    font-weight: 150;
+    transition: .2s ease-in-out;
   }
 
-  .socialMenuMobile {
-    background-color: #F5F5F5;
-    grid-area: social;
-  }
+  /* Image Gallery */
 
-  .iconSocialMobile {
-    height: 3em;
-    margin: 0px;
-  }
-/******************************************************************************* Gray to color transition on hover*/
-  img {
-    transition: .3s ease-in-out;
+  .img {
+    transition: .3s;
     border-radius: 15px;
-    filter: grayscale(100%);
+    filter:grayscale(100%);
   }
 
-  img:hover {
-    transform: scale(1.1);
+  .img:hover { /* Turns pictures from Gray to Color on hover */
+      transform: scale(1.1); /* Makes images expand on hover */
+      filter: grayscale(0%);
+  }
+
+  /* Footer and Instagram */
+
+  #footContainer {
+    background-color: #f5f5f5;
+    margin: -2em; /* Cuts down on whitespace between Image Gallery and Foot Container */
+  }
+
+  .footTxt {
+    background-color: #f5f5f5;
+    color: black;
+  }
+
+  .emailTxt {
+    font-size: 1.2em;
+    color: black;
+  }
+
+/* Setup Gray to Color Animation on Hover */
+  .iconSocialMobile {
+    filter: grayscale(100%);
+    transition: 0.3s;
+  }
+
+  .iconSocialMobile:hover {
     filter: grayscale(0%);
   }
+/* HTML Elements to Ignore / Things I don't want on large screens*/
 
-  .logo:hover {
-    transform: none; /* Prevents logo from enlarging when hovering */
-  }
-
-/* Things to ignore */
-
-  .foot-nav-container {
+  .contactBarTxt {
     display: none;
   }
 
-  footer {
+  .iconContainer {
     display: none;
   }
 
-  .mobileFooter {
+  .divider {
     display: none;
   }
 
-  .followMe {
+  .followMeTxt {
     display: none;
   }
+
 }
