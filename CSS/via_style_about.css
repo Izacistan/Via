@@ -80,6 +80,10 @@ FOOTER STYLES
   font-size: 1.2em;
 }
 
+.emailTxt {
+  color: white;
+}
+
 /* CONTACT Icons */
 
 .iconContainer {
@@ -264,6 +268,7 @@ FOOTER STYLES
 
   .emailTxt {
     font-size: 1.2em;
+    color: black;
   }
 
 /* Setup Gray to Color Animation on Hover */

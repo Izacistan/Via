@@ -106,6 +106,10 @@ FOOTER STYLES
   width: 100px;
 }
 
+.emailTxt {
+  color: white;
+}
+
 /* INSTAGRAM link */
 
 .divider {
@@ -259,6 +263,7 @@ FOOTER STYLES
 
   .emailTxt {
     font-size: 1.2em;
+    color: black;
   }
 
 /* Setup Gray to Color Animation on Hover */
