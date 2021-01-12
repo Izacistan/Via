@@ -192,11 +192,10 @@ FOOTER STYLES
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(3, 18vw) 300px;
     grid-template-areas:
-
-      "logo img img img"
-      "nav img img img"
-      "nav img img img"
-      "... foot foot ..."
+    "logo ... img ..."
+    "nav txt txt txt"
+    "nav txt txt txt"
+    "... foot foot ..."
     ;
 
   }
@@ -216,7 +215,7 @@ FOOTER STYLES
   }
 
   .button {
-    font-size: 2em
+    font-size: 1.6em
 
   }
 
@@ -237,6 +236,19 @@ FOOTER STYLES
       transform: scale(1.1); /* Makes images expand on hover */
       filter: grayscale(0%);
   }
+
+  /* About Text */
+
+  .descriptionTxt {
+    background-color: white;
+    padding: 10px;
+    line-height: 3.5;
+    font-size: 1.1em;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
   /* Footer and Instagram */
 
