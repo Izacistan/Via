@@ -8,337 +8,277 @@ body {
   background: #F5F5F5;
 }
 
-/****************************************************************************** Main Grid layout */
+/*==============
+PRIMARY GRID SETTINGS / Main Container Styles
+===================*/
 
-#container {
-  margin-top: 1em;
+#mainContainer {
+  height: 100vh;
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 21.875em 4.75em 21.875em;
-  grid-gap: 1em;
+  grid-gap: 10px;
+  grid-auto-columns: 1fr;
+  grid-template-rows: 1fr 65px 1fr;
+  font-family: Spartan;
 }
 
-/****************************************************************************** Main Navigation Bar and Button Styles */
+.logo {
+  width: 75%;
+  margin: auto;
+}
 
-.nav-container {
-  background-color: black;
+.navContainer {
   display: flex;
-  justify-content: space-around;
-  flex-direction: row;
-  align-items: center;
+  justify-content: space-around; /* Put ample Space between Menu items */
+  align-items: center; /* Center menu items within Nav bar */
+  background-color: black;
+  margin-top: 1em;
+  height: 65px;
 }
 
 .button {
-  font-family: Spartan;
-  border: none;
-  color: white;
-  font-size: 1.1em;
   text-decoration: none;
-}
-
-/****************************************************************************** Image Styling */
-
-.logo {
-  object-fit: contain;
-}
-
-img {
-  object-fit: cover;
-  display: block;
-  width: 100%; /* Tells element to take up 100% of the container */
-  height: 100%; /* Prevents the content in the container from overflowing. Perfectly scales image containers. */
-}
-
-/****************************************************************************** Paragraph Styling  */
-
-  .description {
-    font-family: Spartan;
-    line-height: 1.7;
-    padding: 1.2em;
-    background-color: white;
-  }
-
-/****************************************************************************** Footer Stlyes */
-
-.contactBar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   color: white;
-  font-family: Spartan;
-  font-size: 25px;
-  background-color: black;
-  width: 100%;
-  height: 3em;
+  margin: 1em;
 }
 
-.foot-nav-container {
+/*==========================
+Profile Image and About Text
+==========================*/
+
+.profilePic {
+  width: 100%;
+}
+
+.descriptionTxt {
   background-color: white;
-  display: flex;
-  width: 100%;
-  height: 150px;
+  padding: 10px;
+  line-height: 1.6;
 }
 
-a {
+/*==========
+FOOTER STYLES
+===========*/
+
+#footContainer {
   display: flex;
-  justify-content: center;
+  flex-direction: column; /* Set to Row by default. Stack Footer vertically for mobile devices. */
+  align-items: center;
+  background-color: black;
+  padding: 25px 0 10px 0; /* Gives footer more space to breath, between footer and main images */
+}
+
+.contactBarTxt {
+  background-color: black;
+  color: white;
+  font-size: 2em;
+  padding-bottom: 25px;
+}
+
+.footTxt {
+  background-color: black;
+  color: white;
+  font-size: 1.2em;
+}
+
+/* CONTACT Icons */
+
+.iconContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 125px;
+  background-color: #f5f5f5;
 }
 
 .icon {
-  width: 55%;
-  object-fit: contain;
+  width: 100px;
 }
 
-footer {
-  display: flex;
-  justify-content: center;
-  font-family: Spartan;
-  text-align: center;
-  background-color: black;
-  color: white;
-  font-size: 20px;
-  padding: 20px;
+/* INSTAGRAM link */
+
+.divider {
+  border: 1px solid grey;
+  width: 75%;
 }
 
-.mobileFooter {
+#socialMenu {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
-.socialMenuMobile {
-  display: flex;
-  flex-direction: column;
-  background-color: black;
-}
-
-.followMe {
-  font-family: Spartan;
-  text-align: center;
-  background-color: black;
+.followMeTxt {
   color: white;
-  font-size: 15px;
 }
 
 .iconSocialMobile {
-  height: 4em;
-  object-fit: contain;
-  margin-bottom: 10px;
+  width: 70px;
 }
-/* Things to ignore */
 
-.phoneNum {
+/* Things to Ignore / HTML Elements to ignore on MOBILE views */
+
+.phoneNumTxt {
   display: none;
 }
 
-.about {
- display: none;
-}
+@media only screen and (min-width: 640px) {
 
-/****************************************************************************** Media Queries */
+  /*===================================================================================
+  Setup Main GRID / Horizontal views mobile and flexible for vert/horz views on Tablets
+  =====================================================================================*/
 
-@media only screen and (min-width: 640px){
-
-  #container {
-    display: grid;
-    grid-gap: 1em;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 100px 300px 1fr 100px;
+  #mainContainer {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 125px 30vw repeat(2, 1fr);
     grid-template-areas:
-        "logo nav nav"
-        ".... img ..."
-        "txt txt txt"
-        "f-text f-text f-text"
-        "foot foot social";
-    height: 1024px;
+    "logo nav nav"
+    ".... img ..."
+    "txt txt txt"
+    "foot foot foot"
+    ;
   }
 
-/****************************************************************************** Grid Area Assignments */
+  /* Logo and Navigation */
 
   .logo {
     grid-area: logo;
+    object-fit: contain;
+    height: 100px;
   }
 
-  .profile_pic {
-    grid-area: img;
-  }
-
-  .description {
-    grid-area: txt;
-  }
-
-  .nav-container {
+  .navContainer {
     grid-area: nav;
-  }
-
-  footer {
-    grid-area: f-text;
-    border-radius: 0 15px 15px 0;
-  }
-
-  .socialMenuMobile {
-    grid-area: social;
-    border-radius: 15px 15px 0 0;
-  }
-
-  .mobileFooterText {
-    margin: 0.5em;
-}
-
-  .iconSocialMobile {
-    height: 4.5em;
-    margin: 0px;
-  }
-
-  .foot-nav-container {
-    grid-area: foot;
-    padding: 10px;
-  }
-
-/****************************************************************************** Main Navigation Bar and Button Styles */
-
-  .nav-container {
+    height: 100px;
     border-radius: 15px 0 0 15px;
-    height: 100%;
   }
 
   .button {
-    border-radius: 15px;
+    font-size: 1.3em;
   }
 
-/******************************************************************************* Image Styling and Paragraph Styling */
+  /* Profile Image and About Text */
 
-  .profile_pic {
-    border-radius: 180px; /* Switch to 15px to match other images on site, if desired. */
-  }
-
-  .description {
-    margin-top: 0;
-  }
-
-/******************************************************************************* Footer Styles */
-
-  .foot-nav-container {
+  .profilePic {
+    grid-area: img;
     height: 100%;
-    background-color: #F5F5F5;
+    border-radius: 180px;
+    object-fit: cover;
   }
 
-  .icon {
-    width: 50%;
+  .descriptionTxt {
+    grid-area: txt;
   }
 
-  .contactBar {
-    display: none;
+  /* Foot Container */
+
+  #footContainer {
+    grid-area: foot;
   }
 
 }
 
 @media only screen and (min-width: 1025px) {
 
-  body {
-    width: 75%;
-    margin: auto;
+  /*=============================================================
+  Setup MAIN Grid / Flexible grid for Laptop/Desktop screen sizes
+   ============================================================*/
+
+  #mainContainer {
+    width: 80%; /* This makes the whole container slightly smaller than available screen space. */
+    margin: auto; /* Perfeclty center entire menu on screen */
+    margin-top: 2em;
+    grid-gap: 1.6em;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 18vw) 300px;
+    grid-template-areas:
+
+      "logo img img img"
+      "nav img img img"
+      "nav img img img"
+      "... foot foot ..."
+    ;
+
   }
 
-/******************************************************************************* Primary Grid */
-  #container {
-    justify-content: center;
-    display: grid;
-    grid-template-columns: repeat(4, 16em);
-    grid-template-rows: repeat(3, 16em) 3em;
-    grid-gap: 2em;
-    grid-template-areas:
-    "logo ... img ..."
-    "nav txt txt txt"
-    "nav txt txt txt"
-    "social ... ... ...";
+  /* Logo and Main Navigation */
+
+  .logo {
     height: auto;
   }
-/******************************************************************************* Paragraph card styling */
 
-  .description {
-    display: flex;
-    line-height: 3;
-    align-items: center;
+  .navContainer {
+    flex-direction: column; /* Had been set to Row on smaller screens, but we want it stacked on larger screens */
+    height: 100%;
+    width: 80%; /* Allows Navigation to be slightly thinner than image gallery */
     border-radius: 15px;
-  }
-
-/******************************************************************************* Main Navigation Bar and Button styles */
-
-  .phoneNum {
-    color: white;
-    font-family: Spartan;
-    font-weight: lighter;
-    font-size: 1.7em;
-    display: inline-block;
-  }
-
-  #phoneButton {
-    display: none;
-  }
-
-  .nav-container {
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-    text-align: center;
-    border-radius: 15px
+    margin: auto; /* Perfectly center the Navigation menu */
   }
 
   .button {
-    font-size: 2em;
-    transition: .2s ease-in-out;
+    font-size: 2em
+
   }
 
   .button:hover {
     color: pink;
-    font-weight: 150;
+    transition: .2s ease-in-out;
   }
 
-  .socialMenuMobile {
-    background-color: #F5F5F5;
-    grid-area: social;
-  }
+  /* Image Gallery */
 
-  .iconSocialMobile {
-    height: 3em;
-    margin: 0px;
-  }
-
-/******************************************************************************* Gray to color transition */
-  img {
-    transition: .3s ease-in-out;
+  .img {
+    transition: .3s;
     border-radius: 15px;
-    filter: grayscale(100%);
+    filter:grayscale(100%);
   }
 
-  img:hover {
-    transform: scale(1.1);
+  .img:hover { /* Turns pictures from Gray to Color on hover */
+      transform: scale(1.1); /* Makes images expand on hover */
+      filter: grayscale(0%);
+  }
+
+  /* Footer and Instagram */
+
+  #footContainer {
+    background-color: #f5f5f5;
+    margin: -2em; /* Cuts down on whitespace between Image Gallery and Foot Container */
+  }
+
+  .footTxt {
+    background-color: #f5f5f5;
+    color: black;
+  }
+
+  .emailTxt {
+    font-size: 1.2em;
+  }
+
+/* Setup Gray to Color Animation on Hover */
+  .iconSocialMobile {
+    filter: grayscale(100%);
+    transition: 0.3s;
+  }
+
+  .iconSocialMobile:hover {
     filter: grayscale(0%);
   }
+/* HTML Elements to Ignore / Things I don't want on large screens*/
 
-  .profile_pic:hover {
-    transform: none; /* Prevent profile picture from enlarging on hover. */
+  .contactBarTxt {
+    display: none;
   }
 
-  .logo:hover {
-    transform: none; /* Prevents logo from enlarging when hovering */
+  .iconContainer {
+    display: none;
   }
 
-/* Things to ignore */
+  .divider {
+    display: none;
+  }
 
-.foot-nav-container {
-  display: none;
-}
+  .followMeTxt {
+    display: none;
+  }
 
-footer {
-  display: none;
-}
-
-.mobileFooter {
-  display: none;
-}
-
-.followMe {
-  display: none;
-}
 }
