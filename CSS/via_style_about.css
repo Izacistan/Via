@@ -13,20 +13,17 @@ PRIMARY GRID SETTINGS / Main Container Styles
 ===================*/
 
 #mainContainer {
-  height: 100vh;
-  display: grid;
-  grid-gap: 10px;
-  grid-auto-columns: 1fr;
-  grid-template-rows: 1fr 65px 1fr;
   font-family: Spartan;
 }
 
 .logo {
-  width: 75%;
-  margin: auto;
+  width: 100%;
+  margin-top: 10px;
 }
 
 .navContainer {
+  position: sticky;
+  top: 0;
   display: flex;
   justify-content: space-around; /* Put ample Space between Menu items */
   align-items: center; /* Center menu items within Nav bar */
@@ -51,8 +48,8 @@ Profile Image and About Text
 
 .descriptionTxt {
   background-color: white;
-  padding: 10px;
-  line-height: 1.6;
+  padding: 25px;
+  line-height: 1.8;
 }
 
 /*==========
@@ -133,8 +130,9 @@ FOOTER STYLES
   =====================================================================================*/
 
   #mainContainer {
+    display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 125px 30vw repeat(2, 1fr);
+    grid-template-rows: 125px 30vw repeat(2, auto);
     grid-template-areas:
     "logo nav nav"
     ".... img ..."
@@ -152,6 +150,7 @@ FOOTER STYLES
   }
 
   .navContainer {
+    position: static;
     grid-area: nav;
     height: 100px;
     border-radius: 15px 0 0 15px;
@@ -207,7 +206,8 @@ FOOTER STYLES
   /* Logo and Main Navigation */
 
   .logo {
-    height: auto;
+    height: 87%;
+    margin-top: 25px;
   }
 
   .navContainer {
@@ -245,9 +245,6 @@ FOOTER STYLES
 
   .descriptionTxt {
     background-color: white;
-    padding: 10px;
-    line-height: 3.5;
-    font-size: 1.1em;
     border-radius: 15px;
     display: flex;
     flex-direction: column;
@@ -299,3 +296,12 @@ FOOTER STYLES
   }
 
 }
+
+ @media only screen and (min-width: 1420px) {
+   /* Fix overflow on mid-sized screens */
+   .descriptionTxt {
+     line-height: 3.5;
+     font-size: 1.1em;
+     padding: 50px;
+   }
+ }
